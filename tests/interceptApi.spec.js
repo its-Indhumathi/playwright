@@ -53,3 +53,10 @@ test('Verify my orders page if invalid order id is passed in request params', as
     await page.locator("button[routerlink*='myorders']").click();
     await page.pause();
 });
+
+test('Block css, image calls to load page faster', async function ({ page }) {
+    /* Aborting requests */
+    await page.route('**/*.{css,jpg,jpeg,png}', route => route.abort());
+    await page.locator("button[routerlink*='myorders']").click();
+    await page.pause();
+});
