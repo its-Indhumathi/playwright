@@ -7,9 +7,6 @@ on:
   pull_request:
     branches: [ main, master ]
 
-env:
-  PLAYWRIGHT_IMAGE: mcr.microsoft.com/playwright:v1.59.1-noble
-
 jobs:
   install:
     runs-on: ubuntu-latest
@@ -34,7 +31,7 @@ jobs:
     needs: install
     runs-on: ubuntu-latest
     container:
-      image: ${{ env.PLAYWRIGHT_IMAGE }}
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     steps:
       - uses: actions/checkout@v4
 
@@ -58,4 +55,4 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 3
