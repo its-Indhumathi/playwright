@@ -5,7 +5,7 @@ test('E2E journey', async function ({ page }) {
     const productList = page.locator('.card-body');
     let searchProduct = "ZARA COAT 3";
     let loginEmail = "testuser@yahoo.com";
-    await page.goto("https://rahulshettyacademy.com/client/#/auth/login/");
+    await page.goto("https://rahulshettyacademy.com/client/");
 
     await page.locator('#userEmail').fill(loginEmail);
     await page.locator('#userPassword').fill('Welcome@123');

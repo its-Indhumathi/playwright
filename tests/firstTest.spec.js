@@ -29,7 +29,7 @@ describe('Sample Test suite', () => {
 
         await USERNAME_INPUT.fill('');
         await USERNAME_INPUT.fill('rahulshettyacademy');
-        //await SIGNIN_BUTTON.click();
+        await SIGNIN_BUTTON.click();
 
         console.log(await PHONE_HEADER_LIST.first().textContent());
         console.log(await PHONE_HEADER_LIST.nth(2).textContent());
