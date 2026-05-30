@@ -54,7 +54,7 @@ test('Verify my orders page if invalid order id is passed in request params', as
     await page.pause();
 });
 
-test.only('Block css, image calls to load page faster', async function ({ page }) {
+test('Block css, image calls to load page faster', async function ({ page }) {
     /* Aborting requests */
     await page.on('request', request => console.log(request.url()));
     await page.on('response', response => console.log(response.url(), response.status()));
