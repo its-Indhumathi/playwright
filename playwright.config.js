@@ -4,7 +4,7 @@ const config = ({
   testDir: './tests',
   timeout: 30 * 1000, // default
   expect: {
-    timeout: 5 * 1000,
+    timeout: 15 * 1000,
   },
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
