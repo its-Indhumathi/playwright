@@ -60,17 +60,16 @@ test('E2E journey', async function ({ page }) {
     /* Verify if the order id is present in my orders page */
     await page.locator("button[routerlink*='myorders']").click();
     await page.locator("tbody").waitFor();
-    const orderList = page.locator('tbody tr');
+    const orderList = await page.locator('tbody tr');
 
-    for (let i = 0; i < orderList.count(); i++) {
+    for (let i = 0; i < await orderList.count(); i++) {
         const rowOrderId = await orderList.nth(i).locator('th').textContent();
         console.log(rowOrderId);
         if (orderId.includes(rowOrderId)) {
-            console.log('Inside');
             await orderList.nth(i).locator(".btn-primary").first().click();      
             break;
         }
     }
 
-    //expect(orderId.includes(await page.locator('.col-text').textContent())).toBeTruthy();
+    expect(orderId.includes(await page.locator('.col-text').textContent())).toBeTruthy();
 });

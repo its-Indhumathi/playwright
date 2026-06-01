@@ -41,7 +41,8 @@ test('Verify my orders page if there are no orders', async function ({ page }) {
         route.fulfill({
             response, body
         });
-    })
+    });
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
     await page.locator("button[routerlink*='myorders']").click();
 });
 
@@ -51,7 +52,6 @@ test('Verify my orders page if invalid order id is passed in request params', as
         route.continue({ url: 'https://rahulshettyacademy.com/api/ecom/order/get-orders-details?id=621661f884b053f6765465b6' });
     });
     await page.locator("button[routerlink*='myorders']").click();
-    await page.pause();
 });
 
 test('Block css, image calls to load page faster', async function ({ page }) {
