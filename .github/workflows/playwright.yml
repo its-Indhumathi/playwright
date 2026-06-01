@@ -42,7 +42,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: npx playwright test --workers=1
         env:
           PLAYWRIGHT_HEADLESS: true
 
