@@ -50,10 +50,10 @@ test('E2E journey', async function ({ page }) {
         }
     }
 
-    expect(page.locator(".user__name [type='text']").first()).toHaveText(loginEmail);
+    expect(await page.locator(".user__name [type='text']").first()).toHaveText(loginEmail);
 
     await page.locator(".action__submit").click();
-    expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ");
+    expect(await page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ");
     let orderId = await page.locator(".em-spacer-1 .ng-star-inserted").textContent();
     console.log('Order Id: ', orderId);
 
