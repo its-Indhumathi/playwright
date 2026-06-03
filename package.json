@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+  "report:generate": "allure generate npx allure-results --clean",
+  "report:open": "allure open allure-report",
+  "report:serve": "allure serve allure-results"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
+    "@playwright/test": "^1.60.0",
     "@types/node": "^25.6.2",
-    "exceljs": "^4.4.0"
+    "allure-playwright": "^3.9.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-security": "^4.0.0",
+    "exceljs": "^3.4.0"
   }
 }
