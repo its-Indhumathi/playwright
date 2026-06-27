@@ -5,7 +5,7 @@ describe('Sample Test suite', () => {
     test('Test with new context', async ({ browser }) => {
         const context = await browser.newContext();
         const page = await context.newPage();
-        await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
+        await page.goto("/AutomationPractice/");
         console.log(await page.title());
     });
 
@@ -18,7 +18,7 @@ describe('Sample Test suite', () => {
         const SIGNIN_BUTTON = page.locator('#signInBtn');
         const PHONE_HEADER_LIST = page.locator('.card-body a');
 
-        await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
+        await page.goto("/loginpagePractise/");
         console.log(await page.title());
         await USERNAME_INPUT.type("testuser");
         await PASSWORD_INPUT.type("Learning@830$3mK2");

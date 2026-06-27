@@ -1,0 +1,8 @@
+TAP version 13
+# Subtest: Sample Test suite
+ok 1 - Sample Test suite
+  ---
+  duration_ms: 0.754084
+  type: 'suite'
+  ...
+Practice Page
